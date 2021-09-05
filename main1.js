@@ -1,6 +1,6 @@
 ig1 = "";
 objects = [];
-var status = "";
+status = "";
 
 function preload() {
     ig1 = loadImage('PEOPLE2.jpg');
@@ -33,6 +33,7 @@ function draw() {
     if (status != "") {
         for (i = 0; i < objects.length; i++) {
             document.getElementById("status").innerHTML = "status:object detected";
+            document.getElementById("noo").innerHTML="No of things detected: "+ objects.length;
             fill("#03fc90");
             percentage=floor(objects[i].confidence*100);
             text(objects[i].label+" "+percentage+"%",objects[i].x+15,objects[i].y+15);
